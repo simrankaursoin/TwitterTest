@@ -1,0 +1,1 @@
+Project Description: Uses Twitter API to search for 10 tweets that contain certain keywords and creates a .txt document containing metadata about these tweets. (secure.py is in .gitignore. Contains ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET for accessing the API)
