@@ -1,10 +1,5 @@
 # twitter_streaming.py
 from secure import ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET
-
-try:
-    import json
-except ImportError:
-    import simplejson as json
 from twitter import Twitter, OAuth, TwitterHTTPError, TwitterStream
 
 #connects to the twitter API
