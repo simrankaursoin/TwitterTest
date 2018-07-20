@@ -1,6 +1,7 @@
 import requests
 import json
-user = requests.get('https://api.github.com/users/nedbat')
+username = "nedbat"
+user = requests.get('https://api.github.com/users/' + username)
 userItem = json.loads(user.text or user.content)
 print("username: ", userItem["login"])
 print(userItem["public_repos"], "public repos")
