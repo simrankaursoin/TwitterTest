@@ -1,7 +1,7 @@
 import requests
 import json
 # username of github account being accessed
-username = "simrankaursoin"
+username = "nedbat"
 user = requests.get('https://api.github.com/users/' + username)
 userItem = json.loads(user.text)
 print(userItem["public_repos"], "public repos")
