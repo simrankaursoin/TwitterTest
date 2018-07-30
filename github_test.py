@@ -31,5 +31,5 @@ with open('repo_data.csv', 'w') as csvfile:
             #compares most recent commit year/month to current year/month
             current_month = str(now)[:7]
             if commit_month == current_month:
-                writer.writerow([repo["name"], commit_month])
+                writer.writerow([repo["name"], item["commit"]["committer"]["date"]])
                 
