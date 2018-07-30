@@ -28,10 +28,8 @@ with open('repo_data.csv', 'w') as csvfile:
             for item in commitsItem:
                 commit_month = item["commit"]["committer"]["date"][:7]
                 break
-            '''
             #compares most recent commit year/month to current year/month
             current_month = str(now)[:7]
             if commit_month == current_month:
-            '''
-            writer.writerow([repo["name"], commit_month])
+                writer.writerow([repo["name"], commit_month])
                 
