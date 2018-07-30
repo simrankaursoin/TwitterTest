@@ -23,12 +23,17 @@ with open('repo_data.csv', 'w') as csvfile:
     writer.writerow(["Name of Python Repo", "Last Commit Date"])
     for repo in repoItem:
         languages = requests.get(repo["languages_url"], auth=(USER, PASS))
+
+        # languageItem contains a full list of all languages used in repo
         languageItem = json.loads(languages.text)
+        # sorts out repos that contain Python
         if "Python" in languageItem:
             commits = requests.get("/".join(["https://api.github.com/repos",
                                    username, repo["name"], "commits"]),
                                    auth=(USER, PASS))
             commitsItem = json.loads(commits.text)
+            # for each repo's commit history
+            #    isolate the date of the most recent commit
             for item in commitsItem:
                 commit_month = item["commit"]["committer"]["date"][:7]
                 break
