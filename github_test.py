@@ -23,7 +23,6 @@ with open('repo_data.csv', 'w') as csvfile:
     writer.writerow(["Name of Python Repo", "Last Commit Date"])
     for repo in repoItem:
         languages = requests.get(repo["languages_url"], auth=(USER, PASS))
-
         # languageItem contains a full list of all languages used in repo
         languageItem = json.loads(languages.text)
         # sorts out repos that contain Python
@@ -39,6 +38,7 @@ with open('repo_data.csv', 'w') as csvfile:
                 break
             # compares most recent commit year/month to current year/month
             current_month = str(now)[:7]
-            if commit_month == current_month:
+            last_month = current_month[:6] + str(int(current_month[6:])-1)
+            if commit_month == current_month or commit_month == last_month:
                 writer.writerow([repo["name"],
                                 item["commit"]["committer"]["date"]])
