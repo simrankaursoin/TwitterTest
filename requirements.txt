@@ -18,7 +18,7 @@ pycodestyle==2.3.1
 pycparser==2.18
 pyflakes==1.6.0
 PyGithub==1.40
-PyJWT==1.6.4
+PyJWT==2.4.0
 pyOpenSSL==18.0.0
 python-dateutil==2.7.3
 python-twitter==3.4.2
